@@ -1,11 +1,19 @@
+import sys
+import os
 import pytest
 from unittest.mock import MagicMock
-from src.yolov8.model import YOLOv8Model
+
+from yolov8.model import YOLOv8Model
+
+# Add the root directory of the project to the Python path
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
+)
 
 
 @pytest.fixture
 def mock_yolo(mocker):
-    yolo = mocker.patch("src.yolov8.model.YOLO")
+    yolo = mocker.patch("yolov8.model.YOLO")
     return yolo
 
 

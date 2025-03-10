@@ -1,19 +1,26 @@
+import sys
+import os
 import pytest
 from unittest.mock import MagicMock
-from src.streamlit.interface import main
+from streamlit.interface import main
+
+# Add the root directory of the project to the Python path
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "src"))
+)
 
 
 @pytest.fixture
 def mock_streamlit(mocker):
-    st = mocker.patch("src.streamlit.interface.st")
+    st = mocker.patch("streamlit.interface.st")
     st.file_uploader.return_value = None
     return st
 
 
 @pytest.fixture
 def mock_model(mocker):
-    load_model = mocker.patch("src.streamlit.interface.load_model")
-    perform_inference = mocker.patch("src.streamlit.interface.perform_inference")
+    load_model = mocker.patch("streamlit.interface.load_model")
+    perform_inference = mocker.patch("streamlit.interface.perform_inference")
     return load_model, perform_inference
 
 

@@ -10,4 +10,5 @@ pyyaml
 setuptools
 pytest
 pytest-mock
+ultralytics
 # Add other dependencies as needed

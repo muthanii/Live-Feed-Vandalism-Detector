@@ -2,7 +2,6 @@ import sys
 import os
 import pytest
 from unittest.mock import MagicMock
-
 from yolov8.model import YOLOv8Model
 
 # Add the root directory of the project to the Python path

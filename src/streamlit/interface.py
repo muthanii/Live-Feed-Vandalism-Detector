@@ -1,4 +1,4 @@
-from streamlit import st
+import streamlit as st
 from yolov8.model import load_model, perform_inference
 
 

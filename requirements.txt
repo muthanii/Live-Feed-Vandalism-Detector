@@ -8,3 +8,6 @@ matplotlib
 scikit-image
 pyyaml
 setuptools
+pytest
+pytest-mock
+# Add other dependencies as needed
